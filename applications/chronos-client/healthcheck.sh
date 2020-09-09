@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [$Force_fail_client_healthcheck == 'yes'] || [$Force_fail_client_healthcheck == 'Yes'] || [$Force_fail_client_healthcheck == 'YES'] || [$Force_fail_client_healthcheck == 'true']
+then
+    exit 2
+fi
+
 ip=$1
 port=3000
 hostname=${ip}:${port}

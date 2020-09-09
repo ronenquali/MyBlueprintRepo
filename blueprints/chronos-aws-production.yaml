@@ -12,6 +12,7 @@ applications:
     input_values:
     - INSTANCETYPE: $INSTANCETYPE
     - BUILD_NUM: $BUILD_NUM
+    - Force_fail_client_healthcheck: $Force_fail_client_healthcheck
     depends_on: 
     - chronos-server
 spec_version: 1
@@ -19,12 +20,16 @@ artifacts:
 - chronos-server: 'chronos/server.py'
 - chronos-client: 'chronos/client.py'
 inputs:
-- INSTANCETYPE:
-    default_value: t3.small,t3.medium,c5.large,m5.large,m4.large
-    optional: true
+- Force_fail_client_healthcheck
+    default_value: no
+    optional: false
+    description: enter "yes" to make the client application fail it's healthcheck
 - BUILD_NUM:
     default_value: 1.0
     optional: false
+- INSTANCETYPE:
+    default_value: t3.small,t3.medium,c5.large,m5.large,m4.large
+    optional: true
 - NETWORK_ID: vpc-0f667f5b8ca4468d5
 - MNG_SUBNET: subnet-0b379d15a3032109b
 - APP_SUBNET_1: subnet-080c35bdbf8aaab08

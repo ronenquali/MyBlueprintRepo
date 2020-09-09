@@ -3,6 +3,7 @@ inputs:
 - AZURE_VM_SIZE: Basic_A1
 - BUILD_NUM: 1.0
 - iam_instance_profile: SSMManagedInstanceRole
+- Force_fail_client_healthcheck: no
 configuration:
   healthcheck:
     script: healthcheck.sh
