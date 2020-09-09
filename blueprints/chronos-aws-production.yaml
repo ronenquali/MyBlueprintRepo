@@ -20,7 +20,7 @@ artifacts:
 - chronos-server: 'chronos/server.py'
 - chronos-client: 'chronos/client.py'
 inputs:
-- Force_fail_client_healthcheck
+- Force_fail_client_healthcheck:
     default_value: no
     optional: false
     description: enter "yes" to make the client application fail it's healthcheck
