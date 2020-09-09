@@ -1,0 +1,46 @@
+kind: blueprint
+clouds:
+- aws: eu-west-1
+applications:
+- chronos-server:
+    target: chronos
+    input_values:
+    - INSTANCETYPE: $INSTANCETYPE
+    - BUILD_NUM: $BUILD_NUM
+- chronos-client:
+    target: chronos
+    input_values:
+    - INSTANCETYPE: $INSTANCETYPE
+    - BUILD_NUM: $BUILD_NUM
+    depends_on: 
+    - chronos-server
+spec_version: 1
+artifacts:
+- chronos-server: 'chronos/server.py'
+- chronos-client: 'chronos/client.py'
+inputs:
+- INSTANCETYPE:
+    default_value: t3.small,t3.medium,c5.large,m5.large,m4.large
+    optional: true
+- BUILD_NUM
+- NETWORK_ID
+- MNG_SUBNET
+- APP_SUBNET_1
+- APP_SUBNET_2
+- infra_stack:
+    default_value: ''
+    optional: true
+infrastructure:
+  stack: $infra_stack
+  connectivity:
+    green_host: green.test.com
+    virtual_network:
+       id: $NETWORK_ID
+       subnets:
+         management: 
+         - $MNG_SUBNET
+         application: 
+         - $APP_SUBNET_1
+         - $APP_SUBNET_2
+debugging:
+  availability: on
