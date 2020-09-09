@@ -1,7 +1,8 @@
 #!/bin/bash
 
-if [$Force_fail_client_healthcheck == 'yes'] || [$Force_fail_client_healthcheck == 'Yes'] || [$Force_fail_client_healthcheck == 'YES'] || [$Force_fail_client_healthcheck == 'true']
+if [ $Force_fail_client_healthcheck == 'yes' ] || [ $Force_fail_client_healthcheck == 'Yes' ] || [ $Force_fail_client_healthcheck == 'YES' ] || [ $Force_fail_client_healthcheck == 'true' ]
 then
+    echo 'Failing the healthcheck!!!'
     exit 2
 fi
 
