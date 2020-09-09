@@ -22,11 +22,11 @@ inputs:
 - INSTANCETYPE:
     default_value: t3.small,t3.medium,c5.large,m5.large,m4.large
     optional: true
-- BUILD_NUM
-- NETWORK_ID
-- MNG_SUBNET
-- APP_SUBNET_1
-- APP_SUBNET_2
+- BUILD_NUM: 1.0
+- NETWORK_ID: vpc-0f667f5b8ca4468d5
+- MNG_SUBNET: subnet-0b379d15a3032109b
+- APP_SUBNET_1: subnet-080c35bdbf8aaab08
+- APP_SUBNET_2: subnet-0a67a15f280780e8b
 - infra_stack:
     default_value: ''
     optional: true
