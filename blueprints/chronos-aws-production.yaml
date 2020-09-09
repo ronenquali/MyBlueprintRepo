@@ -1,6 +1,6 @@
 kind: blueprint
 clouds:
-- aws: eu-west-1
+- aws: us-east-1
 applications:
 - chronos-server:
     target: chronos

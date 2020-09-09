@@ -17,6 +17,9 @@ source:
     - name: quali/ubuntu
       tag: python36
     ami:
+    - id: ami-039a49e70ea773ffc
+      region: us-east-1
+      username: ubuntu
     - id: ami-0f2ed58082cb08a4d
       region: eu-west-1
       username: ubuntu
