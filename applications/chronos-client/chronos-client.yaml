@@ -31,12 +31,6 @@ source:
     - urn: Canonical:UbuntuServer:16.04-LTS:latest
   os_type: linux
 infrastructure:
-  compute:
-    spec:
-      aws:
-        instance_type: $INSTANCETYPE
-      azure:
-        vm_size: $AZURE_VM_SIZE
   connectivity:
     external:
     - port_info:
