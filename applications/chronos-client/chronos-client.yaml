@@ -30,6 +30,21 @@ source:
     azure_image:
     - urn: Canonical:UbuntuServer:16.04-LTS:latest
   os_type: linux
+infrastructure:
+  connectivity:
+    external:
+    - port_info:
+        port: 3000
+        path: ''
+  permissions:
+    aws:
+      iam_instance_profile: $iam_instance_profile
+  compute:
+    spec:
+      aws:
+        instance_type: $INSTANCETYPE
+      azure:
+        vm_size: $AZURE_VM_SIZE
 debugging:
   connection_protocol: SSH
 kind: application
