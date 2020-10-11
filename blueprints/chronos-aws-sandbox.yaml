@@ -20,10 +20,6 @@ artifacts:
 - chronos-server: 'chronos/server.py'
 - chronos-client: 'chronos/client.py'
 inputs:
-- Check_InputValidation_to_be_removed-@123^&1234567890987654321234567890-9876543212346789098765432:
-    default_value: no
-    optional: false
-    description: Just a test, delete me
 - Force_fail_client_healthcheck:
     default_value: no
     optional: false
