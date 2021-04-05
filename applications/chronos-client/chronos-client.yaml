@@ -34,7 +34,7 @@ infrastructure:
   connectivity:
     external:
     - port_info:
-        port: 3000
+        port: 3001
         path: ''
   permissions:
     aws:
