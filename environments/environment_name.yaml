@@ -1,0 +1,27 @@
+kind: environment                               # Differentiate from blueprint
+description: "Example description"
+source:                                         # Immutable
+  blueprint_name: "example_blueprint"
+  repository_name: "example_repository"
+  branch: "main"
+  commit: "abcdef123456"
+inputs:
+  input1: "value1"
+  input2: "value2"
+tags:                                           # Is this mutable?
+  tag1: "value1"
+  tag2: "value2"
+owner_email: example@example.com
+collaborators:
+  collaborators_emails:
+    - collaborator1@example.com
+    - collaborator2@example.com
+  all_space_members: true
+grains:
+  tfgrain:
+      source:
+        branch: feature_branch                  # Is this actually needed?
+        commit: 5cc9cf654851e44569018b6299a727e9a5669508
+  nestedBlueprintName.helmGrain:
+      source:
+        commit: 8059665a9e727a9926b6180964e4518546f9cc5c
