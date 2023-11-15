@@ -22,7 +22,7 @@ tags:
 grains:
   tfgrain:
       source:
-        commit: 5cc9cf654851e44569018b6299a727e9a5669508
+        commit: 5cc9cf654851e44569018b6299a727e9a5669504
   nestedBlueprintName.helmGrain:
       source:
         commit: 8059665a9e727a9926b6180964e4518546f9cc5b
