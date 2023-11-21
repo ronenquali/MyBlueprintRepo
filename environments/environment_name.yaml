@@ -1,5 +1,5 @@
 kind: environment                               
-environment_name: "name1"
+environment_name: "name2"
 description: "Example description"
 state: active / inactive
 owner_email: example@example.com
