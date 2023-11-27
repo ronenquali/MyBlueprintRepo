@@ -12,7 +12,6 @@ grains:
     kind: terraform
     spec:
       source:
-        store: MyBlueprintRepo
         path: assets/terraform/dummy_sleep
       agent:
         name: '{{ .inputs.agent }}'
