@@ -1,1 +1,20 @@
+spec_version: 2
+description: 
 
+inputs:
+  agent:
+    type: agent  
+    
+outputs: {}
+
+grains:
+  dummy_sleep:
+    kind: terraform
+    spec:
+      source:
+        store: torque-testing-private
+        path: assets/terraform/dummy_sleep
+      agent:
+        name: '{{ .inputs.agent }}'
+      inputs:
+        - sleep: '5s'      
