@@ -1,5 +1,5 @@
 spec_version: 2
-description: 
+description: abc
 
 inputs:
   agent:
@@ -13,6 +13,7 @@ grains:
     spec:
       source:
         path: https://g.com/dummy_sleep/
+        commit: 2f529a0a3d511d7d84d790da64e805b694365b1d
       agent:
         name: '{{ .inputs.agent }}'
       inputs:
