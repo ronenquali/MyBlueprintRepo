@@ -1,5 +1,5 @@
 variable "sleep" {
-  default = "10s" 
+  default = "1s" 
 }
 
 resource "time_sleep" "wait_10_sec" {
