@@ -1,6 +1,6 @@
 kind: environment
 environment_name: dummy_sleep
-state: active
+state: inactive
 owner_email: ronen.a@quali.com
 blueprint:
   name: Update sleep
