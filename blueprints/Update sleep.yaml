@@ -12,7 +12,7 @@ grains:
     kind: terraform
     spec:
       source:
-        path: https://github.com/ronenquali/MyBlueprintRepo/tree/master/assets/terraform/dummy_sleep
+        path: assets/terraform/dummy_sleep
         store: MyBlueprintRepo
       agent:
         name: '{{ .inputs.agent }}'
