@@ -7,7 +7,7 @@ blueprint:
   repository_name: MyBlueprintRepo
   commit: 5cce1cd96334ea9c172526b50d253ac981aa26a0
 inputs:
-  agent_name: localagent
+  agent_name: review3-qualidev-ronena
   generic_input: nothing
 tags: {}
 grains: {}
