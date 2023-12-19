@@ -4,7 +4,7 @@ state: active
 owner_email: ronen.a@quali.com
 collaborators:
   collaborators_emails:
-    - ronen-a@qualisystems.com
+    - dummy@acme.com
 blueprint:
   name: Update sleep
   repository_name: MyBlueprintRepo
