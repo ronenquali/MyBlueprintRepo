@@ -2,6 +2,9 @@ kind: environment
 environment_name: dummy_sleep
 state: active
 owner_email: ronen.a@quali.com
+collaborators:
+  collaborators_emails:
+    - ronen-a@qualisystems.com
 blueprint:
   name: Update sleep
   repository_name: MyBlueprintRepo
