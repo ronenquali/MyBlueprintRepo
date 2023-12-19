@@ -1,0 +1,13 @@
+kind: environment
+environment_name: shell-echo-20231203T17555138
+state: inactive
+owner_email: ronen.a@quali.com
+blueprint:
+  name: shell-echo
+  repository_name: MyBlueprintRepo
+  commit: 5cce1cd96334ea9c172526b50d253ac981aa26a0
+inputs:
+  agent_name: staging-agent-qualidev-ronena
+  generic_input: nothing
+tags: {}
+grains: {}
