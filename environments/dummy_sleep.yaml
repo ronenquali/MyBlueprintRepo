@@ -15,4 +15,4 @@ tags: {}
 grains:
   dummy_sleep:
     source:
-      commit: d2abfc6a60e92e245c4ac545f87a9e11f9fb65ce
+      commit: 99e3946688d60c51731eddeb0a5135f1e74d8ff9
