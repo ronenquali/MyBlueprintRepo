@@ -1,5 +1,5 @@
 kind: environment
-environment_name: dummy_sleep
+environment_name: dummy_sleep1
 state: active
 owner_email: ronen.a@quali.com
 collaborators:
@@ -16,4 +16,3 @@ grains:
   dummy_sleep:
     source:
       commit: 96fcd61db57516046bfbb24308cb571c55701b1a
-
