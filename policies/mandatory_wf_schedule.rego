@@ -211,96 +211,12 @@ default result = { "decision": "Approved"}
 
 
 
-result := { "decision": "Denied", "reason": "Environment must have duration. Always On is not allowed" } if {
-    not input.duration_minutes
-    # not is_user_4_environments
-}
-
-result := {"decision": "Denied", "reason": "Invalid data: max_duration_minutes must be a number."} if {
-    is_invalid_data_max_duration_minutes
-}else := {"decision": "Denied", "reason": "Invalid data: duration_for_manual_minutes must be a number."} if {	
-    is_invalid_data_duration_for_manual_minutes
-}
-
-result := {"decision": "Denied", "reason": concat("", ["Environment duration exceeds max duration of ", timespan, ""])} if {
-    is_Environment_duration_exceeds_max_duration
-    timespan := get_timespan_string(data.max_duration_minutes * 60000000000)
-}
-
-result := {"decision": "Manual", "reason": concat("", ["Environment requires an approval because its duration exceeds ", timespan, ""])} if {	
-    is_duration_exceeds_environment_requires_approval
-    timespan := get_timespan_string(data.duration_for_manual_minutes * 60000000000)   
-}
-
 result := { "decision": "Manual", "reason": "Environment has no Power Off workflow" } if {
     is_environment_has_no_power_off_workflow("PowerOff")
 }
 
 result := { "decision": "Manual", "reason": "Automatic Power Off is disabled for VMs (always on)" } if {
     is_automatic_power_off_disabled_for_VMs("PowerOff")
-}
-
-result := { "decision": "Denied", "reason": "No extend duration provided" } if {
-    is_valid_data(data.max_duration_minutes, data.duration_for_manual_minutes)
-    not input.extend_duration_minutes   
-    input.action_identifier.action_type == "Extend"
-}
-
-result := { "decision": "Denied", "reason": "No extend duration provided" } if {
-    is_valid_data(data.max_duration_minutes, data.duration_for_manual_minutes)
-    not is_number(input.extend_duration_minutes)
-    input.action_identifier.action_type == "Extend"
-}
-
-result := { "decision": "Denied", "reason": concat("", ["Environment duration + extension exceeds max duration of ", timespan, ""])}  if {
-    is_valid_data(data.max_duration_minutes, data.duration_for_manual_minutes)
-    is_number(input.extend_duration_minutes)
-    input.extend_duration_minutes + input.duration_minutes > data.max_duration_minutes
-    timespan := get_timespan_string(data.max_duration_minutes * 60000000000)
-    input.action_identifier.action_type == "Extend"
-}
-
-result := { "decision": "Manual", "reason": concat("", ["Environment requires an approval because its duration + extension exceeds ", timespan, ""])}  if {
-    is_valid_data(data.max_duration_minutes, data.duration_for_manual_minutes)
-    is_number(input.extend_duration_minutes)
-    input.extend_duration_minutes + input.duration_minutes < data.max_duration_minutes
-    input.extend_duration_minutes + input.duration_minutes > data.duration_for_manual_minutes
-    timespan := get_timespan_string(data.duration_for_manual_minutes * 60000000000)
-    input.action_identifier.action_type == "Extend"
-}
-
-result := {"decision": "Manual", "reason": "Having NetApp on the environment requires approval"} if {	
-    is_netapp_approved
-}
-
-result := { "decision": "Denied", "reason": "User already has 8 running environments" } if {
-    input.duration_minutes
-    not is_invalid_data_max_duration_minutes
-    not is_invalid_data_duration_for_manual_minutes    
-    not is_Environment_duration_exceeds_max_duration
-    not is_duration_exceeds_environment_requires_approval
-    not is_automatic_power_off_disabled_for_VMs("PowerOff")
-    not is_environment_has_no_power_off_workflow("PowerOff")    
-    is_action_type_launch
-    not is_netapp_approved    
-    is_number(input.owner_active_environments_in_space)
-    input.owner_active_environments_in_space == 8
-    is_allowed_space_environments_per_user(input.space_name)
-    
-}
-
-result := { "decision": "Manual", "reason": "User already has 4 running environments" } if {
-    input.duration_minutes
-    not is_invalid_data_max_duration_minutes
-    not is_invalid_data_duration_for_manual_minutes    
-    not is_Environment_duration_exceeds_max_duration
-    not is_duration_exceeds_environment_requires_approval
-    not is_automatic_power_off_disabled_for_VMs("PowerOff")
-    not is_environment_has_no_power_off_workflow("PowerOff")    
-    is_action_type_launch
-    not is_netapp_approved
-    is_user_4_environments
-    is_allowed_space_environments_per_user(input.space_name)
 }
 
 # #is used to print out the input - recommended to comment out everything else
