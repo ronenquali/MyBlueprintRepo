@@ -12,68 +12,68 @@ days(max_duration_ns) = days_str {
 	days_number := get_unit_number(max_duration_ns, 2)
     days := years_number * 365 + months_number * 30 + days_number
     days != 0
-    days_str := concat(\" \", [sprintf(\"%v\", [days]), \"days\"])
+    days_str := concat(" ", [sprintf("%v", [days]), "days"])
 }
 
 hours(max_duration_ns) = hours_str {
 	hours_number := get_unit_number(max_duration_ns, 3)
     hours_number != 0
-    hours_str := concat(\" \", [sprintf(\"%v\", [hours_number]), \"hours\"])
+    hours_str := concat(" ", [sprintf("%v", [hours_number]), "hours"])
 }
 
 minutes(max_duration_ns) = minutes_str {
 	minutes_number := get_unit_number(max_duration_ns, 4)
     minutes_number != 0
-    minutes_str := concat(\" \", [sprintf(\"%v\", [minutes_number]), \"minutes\"])
+    minutes_str := concat(" ", [sprintf("%v", [minutes_number]), "minutes"])
 }
 
 get_timespan_string(max_duration_ns) = timespan {
     days_str = days(max_duration_ns)
 	hours_str = hours(max_duration_ns)
     minutes_str = minutes(max_duration_ns)
-	timespan := concat(\" \", [days_str, hours_str, minutes_str])
+	timespan := concat(" ", [days_str, hours_str, minutes_str])
 }
 
 get_timespan_string(max_duration_ns) = timespan {
     days_str = days(max_duration_ns)
 	hours_str = hours(max_duration_ns)
     not minutes(max_duration_ns)
-	timespan := concat(\" \", [days_str, hours_str])
+	timespan := concat(" ", [days_str, hours_str])
 }
 
 get_timespan_string(max_duration_ns) = timespan {
     days_str = days(max_duration_ns)
 	minutes_str = minutes(max_duration_ns)
 	not hours(max_duration_ns)
-	timespan := concat(\" \", [days_str, minutes_str])
+	timespan := concat(" ", [days_str, minutes_str])
 }
 
 get_timespan_string(max_duration_ns) = timespan {
     hours_str = hours(max_duration_ns)
 	minutes_str = minutes(max_duration_ns)
 	not days(max_duration_ns)
-	timespan := concat(\" \", [hours_str, minutes_str])
+	timespan := concat(" ", [hours_str, minutes_str])
 }
 
 get_timespan_string(max_duration_ns) = timespan {
 	days_str = days(max_duration_ns)
     not hours(max_duration_ns)
     not minutes(max_duration_ns)
-	timespan := concat(\" \", [days_str])
+	timespan := concat(" ", [days_str])
 }
 
 get_timespan_string(max_duration_ns) = timespan {
 	hours_str = hours(max_duration_ns)
     not days(max_duration_ns)
     not minutes(max_duration_ns)
-	timespan := concat(\" \", [hours_str])
+	timespan := concat(" ", [hours_str])
 }
 
 get_timespan_string(max_duration_ns) = timespan {
 	minutes_str = minutes(max_duration_ns)
     not days(max_duration_ns)
     not hours(max_duration_ns)
-	timespan := concat(\" \", [minutes_str])
+	timespan := concat(" ", [minutes_str])
 }
 
 workflow_exist(workflowName) {
@@ -117,16 +117,16 @@ parameter_exist(paramName) {
 get_input_json_as_string(str,workflowName,answerExpecting){
     wo := input.inputs[_]
     startswith(wo.name, workflowName)
-    wo.value = answerExpecting # \"yes\"    
+    wo.value = answerExpecting # "yes"    
 }
 
 check_is_netapp_need_approval(str){
-    is_netapp_need_approval(str,\"NetApp\",\"yes\")
+    is_netapp_need_approval(str,"NetApp","yes")
 }
 
 is_netapp_need_approval(str,workflowName,answerExpecting){
     wo := input.inputs[_]
-    # print(\"spaceName \", input.space_name)
+    # print("spaceName ", input.space_name)
     startswith(wo.name, workflowName)
     wo.value = answerExpecting 
     not is_allowed_netapp_space(input.space_name)
@@ -160,8 +160,8 @@ is_duration_exceeds_environment_requires_approval(){
 is_automatic_power_off_disabled_for_VMs(workflow_action){
     is_valid_data(data.max_duration_minutes, data.duration_for_manual_minutes)
     data.duration_for_manual_minutes >= input.duration_minutes 
-    workflow_exist(\"PowerOff\")
-    not schedules_exist_not_empty(\"PowerOff\")
+    workflow_exist("PowerOff")
+    not schedules_exist_not_empty("PowerOff")
     is_action_type_launch
 }
 
@@ -173,7 +173,7 @@ is_environment_has_no_power_off_workflow(workflow_action){
 }
 
 is_action_type_launch(){
-    input.action_identifier.action_type == \"Launch\"
+    input.action_identifier.action_type == "Launch"
 }
 
 is_user_4_environments(){
@@ -189,8 +189,8 @@ is_netapp_approved(){
     not is_invalid_data_duration_for_manual_minutes
     not is_Environment_duration_exceeds_max_duration
     not is_duration_exceeds_environment_requires_approval
-    not is_automatic_power_off_disabled_for_VMs(\"PowerOff\")
-    not is_environment_has_no_power_off_workflow(\"PowerOff\")
+    not is_automatic_power_off_disabled_for_VMs("PowerOff")
+    not is_environment_has_no_power_off_workflow("PowerOff")
     is_action_type_launch
     check_is_netapp_need_approval(input)
 }
@@ -200,86 +200,86 @@ is_netapp_approved(){
 # inn := input
 # json.marshal(input) # prints json as string
 
-allowed_actions := {\"Launch\", \"Extend\"}
+allowed_actions := {"Launch", "Extend"}
 
-allowed_netapp_spaces := {\"SE-Labs\",\"Certification-Labs\"}
+allowed_netapp_spaces := {"SE-Labs","Certification-Labs"}
 
-allowed_space_environments_per_user := {\"Support-Labs\"}#, \"Varonis-Labs-STG\"}
+allowed_space_environments_per_user := {"Support-Labs"}#, "Varonis-Labs-STG"}
 
-default result = { \"decision\": \"Approved\"} 
+default result = { "decision": "Approved"} 
 
 
 
-result := { \"decision\": \"Denied\", \"reason\": \"Environment must have duration. Always On is not allowed\" } if {
+result := { "decision": "Denied", "reason": "Environment must have duration. Always On is not allowed" } if {
     not input.duration_minutes
     # not is_user_4_environments
 }
 
-result := {\"decision\": \"Denied\", \"reason\": \"Invalid data: max_duration_minutes must be a number.\"} if {
+result := {"decision": "Denied", "reason": "Invalid data: max_duration_minutes must be a number."} if {
     is_invalid_data_max_duration_minutes
-}else := {\"decision\": \"Denied\", \"reason\": \"Invalid data: duration_for_manual_minutes must be a number.\"} if {	
+}else := {"decision": "Denied", "reason": "Invalid data: duration_for_manual_minutes must be a number."} if {	
     is_invalid_data_duration_for_manual_minutes
 }
 
-result := {\"decision\": \"Denied\", \"reason\": concat(\"\", [\"Environment duration exceeds max duration of \", timespan, \"\"])} if {
+result := {"decision": "Denied", "reason": concat("", ["Environment duration exceeds max duration of ", timespan, ""])} if {
     is_Environment_duration_exceeds_max_duration
     timespan := get_timespan_string(data.max_duration_minutes * 60000000000)
 }
 
-result := {\"decision\": \"Manual\", \"reason\": concat(\"\", [\"Environment requires an approval because its duration exceeds \", timespan, \"\"])} if {	
+result := {"decision": "Manual", "reason": concat("", ["Environment requires an approval because its duration exceeds ", timespan, ""])} if {	
     is_duration_exceeds_environment_requires_approval
     timespan := get_timespan_string(data.duration_for_manual_minutes * 60000000000)   
 }
 
-result := { \"decision\": \"Manual\", \"reason\": \"Environment has no Power Off workflow\" } if {
-    is_environment_has_no_power_off_workflow(\"PowerOff\")
+result := { "decision": "Manual", "reason": "Environment has no Power Off workflow" } if {
+    is_environment_has_no_power_off_workflow("PowerOff")
 }
 
-result := { \"decision\": \"Manual\", \"reason\": \"Automatic Power Off is disabled for VMs (always on)\" } if {
-    is_automatic_power_off_disabled_for_VMs(\"PowerOff\")
+result := { "decision": "Manual", "reason": "Automatic Power Off is disabled for VMs (always on)" } if {
+    is_automatic_power_off_disabled_for_VMs("PowerOff")
 }
 
-result := { \"decision\": \"Denied\", \"reason\": \"No extend duration provided\" } if {
+result := { "decision": "Denied", "reason": "No extend duration provided" } if {
     is_valid_data(data.max_duration_minutes, data.duration_for_manual_minutes)
     not input.extend_duration_minutes   
-    input.action_identifier.action_type == \"Extend\"
+    input.action_identifier.action_type == "Extend"
 }
 
-result := { \"decision\": \"Denied\", \"reason\": \"No extend duration provided\" } if {
+result := { "decision": "Denied", "reason": "No extend duration provided" } if {
     is_valid_data(data.max_duration_minutes, data.duration_for_manual_minutes)
     not is_number(input.extend_duration_minutes)
-    input.action_identifier.action_type == \"Extend\"
+    input.action_identifier.action_type == "Extend"
 }
 
-result := { \"decision\": \"Denied\", \"reason\": concat(\"\", [\"Environment duration + extension exceeds max duration of \", timespan, \"\"])}  if {
+result := { "decision": "Denied", "reason": concat("", ["Environment duration + extension exceeds max duration of ", timespan, ""])}  if {
     is_valid_data(data.max_duration_minutes, data.duration_for_manual_minutes)
     is_number(input.extend_duration_minutes)
     input.extend_duration_minutes + input.duration_minutes > data.max_duration_minutes
     timespan := get_timespan_string(data.max_duration_minutes * 60000000000)
-    input.action_identifier.action_type == \"Extend\"
+    input.action_identifier.action_type == "Extend"
 }
 
-result := { \"decision\": \"Manual\", \"reason\": concat(\"\", [\"Environment requires an approval because its duration + extension exceeds \", timespan, \"\"])}  if {
+result := { "decision": "Manual", "reason": concat("", ["Environment requires an approval because its duration + extension exceeds ", timespan, ""])}  if {
     is_valid_data(data.max_duration_minutes, data.duration_for_manual_minutes)
     is_number(input.extend_duration_minutes)
     input.extend_duration_minutes + input.duration_minutes < data.max_duration_minutes
     input.extend_duration_minutes + input.duration_minutes > data.duration_for_manual_minutes
     timespan := get_timespan_string(data.duration_for_manual_minutes * 60000000000)
-    input.action_identifier.action_type == \"Extend\"
+    input.action_identifier.action_type == "Extend"
 }
 
-result := {\"decision\": \"Manual\", \"reason\": \"Having NetApp on the environment requires approval\"} if {	
+result := {"decision": "Manual", "reason": "Having NetApp on the environment requires approval"} if {	
     is_netapp_approved
 }
 
-result := { \"decision\": \"Denied\", \"reason\": \"User already has 8 running environments\" } if {
+result := { "decision": "Denied", "reason": "User already has 8 running environments" } if {
     input.duration_minutes
     not is_invalid_data_max_duration_minutes
     not is_invalid_data_duration_for_manual_minutes    
     not is_Environment_duration_exceeds_max_duration
     not is_duration_exceeds_environment_requires_approval
-    not is_automatic_power_off_disabled_for_VMs(\"PowerOff\")
-    not is_environment_has_no_power_off_workflow(\"PowerOff\")    
+    not is_automatic_power_off_disabled_for_VMs("PowerOff")
+    not is_environment_has_no_power_off_workflow("PowerOff")    
     is_action_type_launch
     not is_netapp_approved    
     is_number(input.owner_active_environments_in_space)
@@ -288,14 +288,14 @@ result := { \"decision\": \"Denied\", \"reason\": \"User already has 8 running e
     
 }
 
-result := { \"decision\": \"Manual\", \"reason\": \"User already has 4 running environments\" } if {
+result := { "decision": "Manual", "reason": "User already has 4 running environments" } if {
     input.duration_minutes
     not is_invalid_data_max_duration_minutes
     not is_invalid_data_duration_for_manual_minutes    
     not is_Environment_duration_exceeds_max_duration
     not is_duration_exceeds_environment_requires_approval
-    not is_automatic_power_off_disabled_for_VMs(\"PowerOff\")
-    not is_environment_has_no_power_off_workflow(\"PowerOff\")    
+    not is_automatic_power_off_disabled_for_VMs("PowerOff")
+    not is_environment_has_no_power_off_workflow("PowerOff")    
     is_action_type_launch
     not is_netapp_approved
     is_user_4_environments
@@ -303,7 +303,7 @@ result := { \"decision\": \"Manual\", \"reason\": \"User already has 4 running e
 }
 
 # #is used to print out the input - recommended to comment out everything else
-# result := { \"decision\": \"Manual\", \"reason\": inputAsString } if {
+# result := { "decision": "Manual", "reason": inputAsString } if {
 #     input.duration_minutes
 #     inputAsString := json.marshal(input)
 # }"
