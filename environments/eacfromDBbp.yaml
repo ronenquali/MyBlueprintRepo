@@ -6,4 +6,7 @@ blueprint:
   name: bpforeac
   repository_name: qtorque
 tags: {}
-grains: {}
+grains:
+  shell-echo:
+    source:
+      commit: 5cce1cd96334ea9c172526b50d253ac981aa26a0
