@@ -1,6 +1,6 @@
 kind: environment
 environment_name: shell-echo-eac
-state: active
+state: inactive
 owner_email: ronen.a@quali.com
 blueprint:
   name: shell-echo
@@ -9,7 +9,6 @@ blueprint:
 inputs:
   agent_name: qualidev-aks-colonydev-prod-ronena
   generic_input: nothing
-  input1: blabla
 tags: {}
 grains: {}
 
