@@ -4,7 +4,7 @@ state: active
 owner_email: ronen.a@quali.com
 collaborators:
   collaborators_emails:
-    - 	ronen-A@qualisystems.com
+    - 		ronen-a@qualisystems.com
 blueprint:
   name: shell-echo
   repository_name: MyBlueprintRepo
