@@ -1,0 +1,10 @@
+kind: environment
+environment_name: bpforeac-20240407T12403927
+state: active
+owner_email: ronen.a@quali.com
+blueprint:
+  name: bpforeac
+  repository_name: qtorque
+inputs: {}
+tags: {}
+grains: {}
