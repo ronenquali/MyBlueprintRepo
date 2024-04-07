@@ -12,6 +12,7 @@ blueprint:
 inputs:
   agent_name: qualidev-aks-colonydev-prod-ronena
   generic_input: nothing
+  new_input: val
 tags: {}
 grains: {}
 
