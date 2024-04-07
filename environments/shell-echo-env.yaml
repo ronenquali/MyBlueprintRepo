@@ -9,6 +9,7 @@ blueprint:
 inputs:
   agent_name: qualidev-aks-colonydev-prod-ronena
   generic_input: nothing
+  input1: blabla
 tags: {}
 grains: {}
 
