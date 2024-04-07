@@ -1,10 +1,7 @@
 kind: environment
 environment_name: shell-echo-20231203T17555138
-state: active
+state: inactive
 owner_email: ronen.a@quali.com
-collaborators:
-  collaborators_emails:
-    - 		ronen-a@qualisystems.com
 blueprint:
   name: shell-echo
   repository_name: MyBlueprintRepo
@@ -12,7 +9,6 @@ blueprint:
 inputs:
   agent_name: qualidev-aks-colonydev-prod-ronena
   generic_input: nothing
-  new_input: val
 tags: {}
 grains: {}
 
