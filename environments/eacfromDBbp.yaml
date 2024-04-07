@@ -5,6 +5,7 @@ owner_email: ronen.a@quali.com
 blueprint:
   name: bpforeac
   repository_name: qtorque
-inputs: {}
+inputs: 
+  input1: bla
 tags: {}
 grains: {}
