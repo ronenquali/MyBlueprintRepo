@@ -2,9 +2,7 @@ kind: environment
 environment_name: shell-echo-eac
 state: active
 owner_email: ronen.a@quali.com
-collaborators:
-  collaborators_emails:
-    - XXXXronen-a@qualisystems.com
+
 blueprint:
   name: shell-echo
   repository_name: MyBlueprintRepo
