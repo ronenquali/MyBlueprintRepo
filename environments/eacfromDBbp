@@ -1,5 +1,5 @@
 kind: environment
-environment_name: bpforeac-20240407T12403927
+environment_name: bpforeac-1
 state: active
 owner_email: ronen.a@quali.com
 blueprint:
