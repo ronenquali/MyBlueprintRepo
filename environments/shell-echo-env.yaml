@@ -1,6 +1,6 @@
 kind: environment
 environment_name: shell-echo-eac
-state: inactive
+state: active
 owner_email: ronen.a@quali.com
 collaborators:
   collaborators_emails:
