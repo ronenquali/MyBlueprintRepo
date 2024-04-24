@@ -1,0 +1,23 @@
+spec_version: 2
+description: abc
+
+inputs:
+  agent:
+    type: agent  
+    
+outputs: {}
+
+grains:
+  dummy_sleep:
+    kind: terraform
+    spec:
+      source:
+        path: assets/terraform/dummy_sleep
+        store: MyBlueprintRepo
+      agent:
+        name: '{{ .inputs.agent }}'
+      inputs:
+        - sleep: '1s'     
+
+
+
