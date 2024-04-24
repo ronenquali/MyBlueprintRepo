@@ -18,3 +18,4 @@ grains:
         name: '{{ .inputs.agent }}'
       inputs:
         - sleep: '1s'      
+
