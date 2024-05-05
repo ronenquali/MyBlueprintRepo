@@ -19,3 +19,4 @@ grains:
         deploy:
           commands:
             - "echo {{ .inputs.generic_input }}"
+
