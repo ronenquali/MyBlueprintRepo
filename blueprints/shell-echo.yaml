@@ -20,3 +20,4 @@ grains:
           commands:
             - "echo {{ .inputs.generic_input }}"
 
+
