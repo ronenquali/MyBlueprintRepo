@@ -1,0 +1,29 @@
+spec_version: 2
+inputs:
+  space_name:
+    type: 'string'
+    description: 'Torque space name to be created 2'
+  torque_space:
+    type: 'string'
+    description: 'Torque space to be used during Torque API authentication.'
+  torque_token:
+    type: 'string'
+    description: 'Torque token (long token or short token) to be used for Torque API authneticaiton.'
+outputs: {}
+grains:
+  Space:
+    kind: 'blueprint'
+    spec:
+      source:
+        store: 'qtorque'
+        path: 'Space'
+      inputs:
+        - space_color: 'darkGreen'
+        - space_icon: 'flow'
+        - space_name: '{{ .inputs.space_name }}'
+        - torque_host: 'https://portal.qtorque.io/'
+        - torque_space: '{{ .inputs.torque_space }}'
+        - torque_token: '{{ .inputs.torque_token }}'
+        - agent: 'vido-eks-portal-preview'
+      outputs:
+        - 'space_space_name'
