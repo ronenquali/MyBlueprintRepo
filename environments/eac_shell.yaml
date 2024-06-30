@@ -6,8 +6,9 @@ environment:
   state: active
   owner_email: tomer.v@quali.com
   spaces:
-       - test
+    - test
        - anothertest
+  - yetanother
 
 inputs:
   compute-service:
