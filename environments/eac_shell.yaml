@@ -1,0 +1,43 @@
+spec_version: 2-preview
+description: description text25
+
+environment:
+  environment_name: dev_workflow
+  state: active
+  owner_email: tomer.v@quali.com
+  spaces:
+  - test
+
+inputs:
+  compute-service:
+    type: agent
+    default: tomerv
+  input1:
+    type: string
+    default: hello_world
+
+grains:
+  myShell:
+    kind: shell
+    spec:
+      #isolated: false # false -> not create new runner for every shell grain (so basically make it behave like terraform 1 runner for all the grains)
+      agent:
+        name: '{{.inputs.compute-service}}'
+      files:
+        - source: tomer_playground
+          path: "scripts/test.sh"
+        # - source: tomer_playground
+        #   path: "scripts/print.sh"
+      activities:
+        deploy:
+          commands:
+            #- "apt-get -y install git unzip curl"
+            #- "git clone {{ .inputs.repoUrl }}"
+            #- "curl https://get.datree.io | /bin/bash"
+            #- "echo 'hello2'"
+            - "./test.sh {{.inputs.input1}}"
+            #- "./print.sh {{.inputs.input1}}"
+        # destroy:
+        #   commands:
+        #     - "echo 'by by'"
+      #auto-retry: false
