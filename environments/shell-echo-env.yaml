@@ -1,14 +1,40 @@
-kind: environment
-environment_name: shell-echo-eac
-state: inactive
-owner_email: ronen.a@quali.com
-blueprint:
-  name: shell-echo
-  repository_name: MyBlueprintRepo
-  commit: 5cce1cd96334ea9c172526b50d253ac981aa26a0
+spec_version: 2
+description: a blueprint for testing as many features as possible
+environment:
+  environment_name: shell-echo-20250109T17142090
+  state: active
+  owner_email: ronen.a@quali.com
+# inputs can be provided by the user, API or CI plugin when creating an environment.
 inputs:
-  agent_name: qualidev-aks-colonydev-prod-ronena
-  generic_input: nothing
-tags: {}
-grains: {}
-
+  agent_name:
+    type: agent
+    default: newer1
+    description: must be k8s
+  generic_input:
+    type: string
+    default: nothing
+# outputs define which data that was generated during environment provisioning will be returned to the user, API or CI.
+outputs: {}
+grains:
+  shell-echo:
+    kind: shell
+    spec:
+      agent:
+      # The Torque agent that will be used to provision the environment.
+        name: '{{ .inputs.agent_name }}'
+        # A service account annotated with a role ARN with permissions to run the asset
+        # service-account: <service-account-name>
+        # Will override the default value for Runners isolation
+        # isolated: <boolean>
+      inputs: []
+      # The environment variables declared in this section will be available during the grain deployment as well as the grain destroy phase
+      # env-vars:
+      # - VAR_NAME: var value
+      env-vars: []
+      outputs: []
+      # Helm commands to run before installing the chart
+      commands: []
+      activities:
+        deploy:
+          commands:
+          - command: echo {{ .inputs.generic_input }}
