@@ -4,6 +4,12 @@ environment:
   environment_name: EaC-shell-echo
   state: active
   owner_email: ronen.a@quali.com
+  collaborators: 
+    collaborators_emails:
+      - gamal@acme.com
+    collaborators_groups:
+      - Group1
+    
 # inputs can be provided by the user, API or CI plugin when creating an environment.
 inputs:
   agent_name:
