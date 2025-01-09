@@ -1,7 +1,7 @@
 spec_version: 2
 description: a blueprint for testing as many features as possible
 environment:
-  environment_name: shell-echo-20250109T17142090
+  environment_name: EaC-shell-echo
   state: inactive
   owner_email: ronen.a@quali.com
 # inputs can be provided by the user, API or CI plugin when creating an environment.
