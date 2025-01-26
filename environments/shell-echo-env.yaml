@@ -7,7 +7,6 @@ environment:
   collaborators: 
     collaborators_emails:
       - gamal@acme.com
-      - user3@acme.com
 #    collaborators_groups:
 #      - Group1
 
