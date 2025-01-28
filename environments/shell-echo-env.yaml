@@ -5,8 +5,9 @@ environment:
   state: active
   owner_email: ronen.a@quali.com
   collaborators: 
-    collaborators_emails:
-      - gamal@acme.com
+    all_space_members: true
+#    collaborators_emails:
+#      - gamal@acme.com
 #    collaborators_groups:
 #      - Group1
 
