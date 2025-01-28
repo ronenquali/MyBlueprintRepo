@@ -9,6 +9,7 @@ environment:
       - gamal@acme.com
 #    collaborators_groups:
 #      - Group1
+
     
 # inputs can be provided by the user, API or CI plugin when creating an environment.
 inputs:
