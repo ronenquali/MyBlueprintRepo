@@ -6,7 +6,7 @@ inputs:
     type: agent
   target-namespace:
     type: string
-    default: "ronen-test"
+    default: "default"
 
 grains:
   nginx:
@@ -17,7 +17,7 @@ grains:
         path: helm/nginx-test
       agent:
         name: '{{ .inputs.agent }}'
-        service-account: remote-cluster-accessor
+        service-account: default
         kubernetes:
           permissions:
             # secret-namespace can be left out and be the runner namespace which is the agent's default namespace
