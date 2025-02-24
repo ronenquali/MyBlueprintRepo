@@ -1,0 +1,23 @@
+spec_version: 2
+description: Deploy helm nginx-test on remote cluster
+
+inputs:
+  agent:
+    type: agent
+  target-namespace:
+    type: string
+    default: "default"
+
+grains:
+  nginx:
+    kind: helm
+    spec:
+      source:
+        store: test-spec2-public
+        path: helm/nginx-test
+      agent:
+        name: '{{ .inputs.agent }}'
+        service-account: default
+      target-namespace: '{{ inputs.target-namespace }}'
+      commands:
+        - dep up helm/nginx-test
