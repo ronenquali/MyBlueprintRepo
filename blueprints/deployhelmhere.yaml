@@ -1,5 +1,5 @@
 spec_version: 2
-description: Deploy helm nginx-test on remote cluster
+description: Deploy helm on the agent cluster
 
 inputs:
   agent:
