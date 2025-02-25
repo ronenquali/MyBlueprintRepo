@@ -23,7 +23,7 @@ grains:
             # secret-namespace can be left out and be the runner namespace which is the agent's default namespace
             secret-namespace: default
             secret-name: mysecret
-            destination-context-name: supposedtobe-kind-second
+            destination-context-name: kind-second
       target-namespace: '{{ inputs.target-namespace }}'
       commands:
         - dep up helm/nginx-test
