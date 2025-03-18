@@ -2,7 +2,7 @@ spec_version: 2
 description: abc
 environment:
   environment_name: Update sleep-20250318T14283368
-  state: inactive
+  state: active
   owner_email: ronen.a@quali.com
 inputs:
   agent:
@@ -14,7 +14,7 @@ grains:
     spec:
       source:
         store: MyBlueprintRepo
-        path: assets/terraform/dummy_sleep
+        path: assets/terraform/dummybad
         commit: 671259a8952360bf70666893230a285920821b6d
       agent:
         name: '{{ .inputs.agent }}'
