@@ -1,4 +1,4 @@
-variable "sleepXXXXXX" {
+variable "sleep" {
   default = "1s" 
 }
 
