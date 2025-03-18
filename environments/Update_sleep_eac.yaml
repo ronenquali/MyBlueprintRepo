@@ -15,7 +15,7 @@ grains:
       source:
         store: MyBlueprintRepo
         path: assets/terraform/dummybad
-        commit: 671259a8952360bf70666893230a285920821b6d
+        commit: 238f6fdd334bffe64a2a8d2bcb01624f7c05e8db
       agent:
         name: '{{ .inputs.agent }}'
       inputs:
