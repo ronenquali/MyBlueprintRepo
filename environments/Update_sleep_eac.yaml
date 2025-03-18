@@ -1,0 +1,21 @@
+spec_version: 2
+description: abc
+environment:
+  environment_name: Update sleep-20250318T14283368
+  state: active
+  owner_email: ronen.a@quali.com
+inputs:
+  agent:
+    type: agent
+    default: newer1
+grains:
+  dummy_sleep:
+    kind: terraform
+    spec:
+      source:
+        store: MyBlueprintRepo
+        path: assets/terraform/dummy_sleep
+      agent:
+        name: '{{ .inputs.agent }}'
+      inputs:
+      - sleep: 1s
