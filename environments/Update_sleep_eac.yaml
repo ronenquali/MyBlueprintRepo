@@ -15,6 +15,7 @@ grains:
       source:
         store: MyBlueprintRepo
         path: assets/terraform/dummy_sleep
+        commit: b39e0a9e86aab97d255af22507f700936a3f2ef5
       agent:
         name: '{{ .inputs.agent }}'
       inputs:
