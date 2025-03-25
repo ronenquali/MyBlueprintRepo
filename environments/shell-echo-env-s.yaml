@@ -1,7 +1,7 @@
 spec_version: 2
 description: a blueprint for testing as many features as possible
 environment:
-  environment_name: EaC-shell-echo
+  environment_name: EaC-shell-echo-s
   state: inactive
   owner_email: ronen.a@quali.com
   collaborators: 
