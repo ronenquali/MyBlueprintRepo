@@ -15,7 +15,7 @@ environment:
 inputs:
   agent_name:
     type: agent
-    default: eks-2
+    default: aks-review1
     description: must be k8s
   generic_input:
     type: string
