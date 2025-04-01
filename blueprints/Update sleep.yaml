@@ -3,7 +3,9 @@ description: abc
 
 inputs:
   agent:
-    type: agent  
+    type: agent
+  whatever:
+    default: not-important
     
 outputs: {}
 
