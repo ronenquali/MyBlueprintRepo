@@ -1,0 +1,26 @@
+spec_version: 2
+environment:
+  environment_name: UpdateSleepWrapper-20250410T14345766
+  state: active
+  owner_email: ronen.a@quali.com
+# inputs can be provided by the user, API or CI plugin when creating an environment.
+inputs: {}
+# outputs define which data that was generated during environment provisioning will be returned to the user, API or CI.
+outputs: {}
+grains:
+  Update sleep:
+    kind: blueprint
+    spec:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/Update sleep.yaml
+      inputs:
+      - agent: newer1
+      - whatever: not-important
+      # The environment variables declared in this section will be available during the grain deployment as well as the grain destroy phase
+      # env-vars:
+      # - VAR_NAME: var value
+      env-vars: []
+      outputs: []
+      # Helm commands to run before installing the chart
+      commands: []
