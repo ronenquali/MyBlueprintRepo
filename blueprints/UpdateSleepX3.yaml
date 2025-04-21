@@ -37,7 +37,7 @@ grains:
         path: assets/terraform/dummy_sleep
         store: MyBlueprintRepo
       scripts: 
-        pre-tf-init:
+        pre-tf-destroy:
           source:
             store: MyBlueprintRepo
             path : scripts/fail_sometimes.sh
