@@ -1,0 +1,47 @@
+spec_version: 2
+description: abc
+
+inputs:
+  agent:
+    type: agent
+  whatever:
+    default: not-important
+    
+outputs: {}
+
+grains:
+  dummy_sleep1:
+    kind: terraform
+    spec:
+      source:
+        path: assets/terraform/dummy_sleep
+        store: MyBlueprintRepo
+      agent:
+        name: '{{ .inputs.agent }}'
+      inputs:
+        - sleep: '1s'   
+  dummy_sleep2:
+    kind: terraform
+    spec:
+      source:
+        path: assets/terraform/dummy_sleep
+        store: MyBlueprintRepo
+      agent:
+        name: '{{ .inputs.agent }}'
+      inputs:
+        - sleep: '1s'   
+  dummy_coma:
+    kind: terraform
+    spec:
+      source:
+        path: assets/terraform/dummy_sleep
+        store: MyBlueprintRepo
+      scripts: 
+        pre-tf-init:
+          source:
+            store: MyBlueprintRepo
+            path : scripts/fail_sometimes.sh
+      agent:
+        name: '{{ .inputs.agent }}'
+      inputs:
+        - sleep: '1s'   
