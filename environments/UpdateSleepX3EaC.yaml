@@ -1,0 +1,87 @@
+spec_version: 2
+description: abc
+environment:
+  environment_name: UpdateSleepX3-EaC
+  state: active
+  owner_email: ronen.a@quali.com
+# inputs can be provided by the user, API or CI plugin when creating an environment.
+inputs:
+  agent:
+    type: agent
+    default: newer1
+  whatever:
+    default: not-important
+# outputs define which data that was generated during environment provisioning will be returned to the user, API or CI.
+outputs: {}
+grains:
+  dummy_sleep1:
+    kind: terraform
+    spec:
+      source:
+        store: MyBlueprintRepo
+        path: assets/terraform/dummy_sleep
+      agent:
+      # The Torque agent that will be used to provision the environment.
+        name: '{{ .inputs.agent }}'
+        # A service account annotated with a role ARN with permissions to run the asset
+        # service-account: <service-account-name>
+        # Will override the default value for Runners isolation
+        # isolated: <boolean>
+      inputs:
+      - sleep: 1s
+      # The environment variables declared in this section will be available during the grain deployment as well as the grain destroy phase
+      # env-vars:
+      # - VAR_NAME: var value
+      env-vars: []
+      outputs: []
+      # Helm commands to run before installing the chart
+      commands: []
+  dummy_sleep2:
+    kind: terraform
+    spec:
+      source:
+        store: MyBlueprintRepo
+        path: assets/terraform/dummy_sleep
+      agent:
+      # The Torque agent that will be used to provision the environment.
+        name: '{{ .inputs.agent }}'
+        # A service account annotated with a role ARN with permissions to run the asset
+        # service-account: <service-account-name>
+        # Will override the default value for Runners isolation
+        # isolated: <boolean>
+      inputs:
+      - sleep: 1s
+      # The environment variables declared in this section will be available during the grain deployment as well as the grain destroy phase
+      # env-vars:
+      # - VAR_NAME: var value
+      env-vars: []
+      outputs: []
+      # Helm commands to run before installing the chart
+      commands: []
+  dummy_coma:
+    kind: terraform
+    spec:
+      source:
+        store: MyBlueprintRepo
+        path: assets/terraform/dummy_sleep
+      agent:
+      # The Torque agent that will be used to provision the environment.
+        name: '{{ .inputs.agent }}'
+        # A service account annotated with a role ARN with permissions to run the asset
+        # service-account: <service-account-name>
+        # Will override the default value for Runners isolation
+        # isolated: <boolean>
+      inputs:
+      - sleep: 1s
+      # The environment variables declared in this section will be available during the grain deployment as well as the grain destroy phase
+      # env-vars:
+      # - VAR_NAME: var value
+      env-vars: []
+      outputs: []
+      # Helm commands to run before installing the chart
+      commands: []
+      scripts:
+        pre-tf-destroy:
+          source:
+            store: MyBlueprintRepo
+            path: scripts/fail_sometimes.sh
