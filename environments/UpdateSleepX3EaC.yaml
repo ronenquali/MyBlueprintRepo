@@ -2,7 +2,7 @@ spec_version: 2
 description: abc
 environment:
   environment_name: UpdateSleepX3-EaC
-  state: active
+  state: inactive
   owner_email: ronen.a@quali.com
 # inputs can be provided by the user, API or CI plugin when creating an environment.
 inputs:
