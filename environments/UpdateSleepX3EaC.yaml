@@ -58,30 +58,30 @@ grains:
   #     outputs: []
   #     # Helm commands to run before installing the chart
   #     commands: []
-  dummy_coma:
-    kind: terraform
-    spec:
-      source:
-        store: MyBlueprintRepo
-        path: assets/terraform/dummy_sleep
-      agent:
-      # The Torque agent that will be used to provision the environment.
-        name: '{{ .inputs.agent }}'
-        # A service account annotated with a role ARN with permissions to run the asset
-        # service-account: <service-account-name>
-        # Will override the default value for Runners isolation
-        # isolated: <boolean>
-      inputs:
-      - sleep: 1s
-      # The environment variables declared in this section will be available during the grain deployment as well as the grain destroy phase
-      # env-vars:
-      # - VAR_NAME: var value
-      env-vars: []
-      outputs: []
-      # Helm commands to run before installing the chart
-      commands: []
-      scripts:
-        pre-tf-destroy:
-          source:
-            store: MyBlueprintRepo
-            path: scripts/fail_sometimes.sh
+  # dummy_coma:
+  #   kind: terraform
+  #   spec:
+  #     source:
+  #       store: MyBlueprintRepo
+  #       path: assets/terraform/dummy_sleep
+  #     agent:
+  #     # The Torque agent that will be used to provision the environment.
+  #       name: '{{ .inputs.agent }}'
+  #       # A service account annotated with a role ARN with permissions to run the asset
+  #       # service-account: <service-account-name>
+  #       # Will override the default value for Runners isolation
+  #       # isolated: <boolean>
+  #     inputs:
+  #     - sleep: 1s
+  #     # The environment variables declared in this section will be available during the grain deployment as well as the grain destroy phase
+  #     # env-vars:
+  #     # - VAR_NAME: var value
+  #     env-vars: []
+  #     outputs: []
+  #     # Helm commands to run before installing the chart
+  #     commands: []
+  #     scripts:
+  #       pre-tf-destroy:
+  #         source:
+  #           store: MyBlueprintRepo
+  #           path: scripts/fail_sometimes.sh
