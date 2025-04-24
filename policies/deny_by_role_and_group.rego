@@ -1,6 +1,6 @@
 package torque.environment
 
-result := {"decision": "Denied", "reason": "No means no!"} if {
+result := {"decision": "Denied", "reason": input.groups[0]} if {
 	input.groups[0] == "g1x"
 }
 
