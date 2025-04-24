@@ -7,5 +7,5 @@ result = { "decision": "Approved", "reason": "I'm nice that way" } if {
 }
 
 result = { "decision": "Denied", "reason": "Becasue why not..." } if {
-    input.space_name == "space1x"
+    input.space_name == "space1"
 }
