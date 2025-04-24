@@ -5,3 +5,4 @@ result := {"decision": "Denied", "reason": input.groups[0]} if {
 }
 
 else := {"decision": "Approved", "reason": "Sure whatever…"}
+
