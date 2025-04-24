@@ -1,5 +1,5 @@
 package torque.environment
 
-result = {"decision": "Denied", "reason": "unknow"} if {
+result = {"decision": "Denied", "reason": input.space_name} if {
 	false
 }
