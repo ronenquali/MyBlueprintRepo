@@ -14,7 +14,7 @@ grains:
     spec:
       source:
         store: MyBlueprintRepo
-        path: github.com/ronenquali/MyBlueprintRepo//assets/k8s/aws-input-source.yaml
+        path: assets/k8s/aws-input-source.yaml
       agent:
         name: '{{ .inputs.agent }}'
         service-account: default
