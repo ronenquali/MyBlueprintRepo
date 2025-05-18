@@ -1,0 +1,21 @@
+spec_version: 2
+description: Deploy helm on the agent cluster
+
+inputs:
+  agent:
+    type: agent
+  target-namespace:
+    type: string
+    default: "default"
+
+grains:
+  server:
+    kind: kubernetes
+    spec:
+      source:
+        store: MyBlueprintRepo
+        path: github.com/ronenquali/MyBlueprintRepo//assets/k8s/aws-input-source.yaml
+      agent:
+        name: '{{ .inputs.agent }}'
+        service-account: default
+      target-namespace: '{{ inputs.target-namespace }}'
