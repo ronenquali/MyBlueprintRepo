@@ -6,7 +6,7 @@ inputs:
     type: agent
   target-namespace:
     type: string
-    default: "default"
+    default: "aws-input-source-ronen"
 
 grains:
   server:
