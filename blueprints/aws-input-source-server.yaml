@@ -7,6 +7,9 @@ inputs:
   target-namespace:
     type: string
     default: "aws-input-source-ronen"
+  service-account:
+    type: string
+    default: "aws-input-source-ronen"
 
 grains:
   server:
@@ -17,5 +20,5 @@ grains:
         path: assets/k8s/aws-input-source.yaml
       agent:
         name: '{{ .inputs.agent }}'
-        service-account: default
+        service-account: '{{ inputs.service-account }}'
       target-namespace: '{{ inputs.target-namespace }}'
