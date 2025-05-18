@@ -9,7 +9,7 @@ inputs:
     default: "aws-input-source-ronen"
   service-account:
     type: string
-    default: "aws-input-source-ronen"
+    default: "deployer-sa"
 
 grains:
   server:
