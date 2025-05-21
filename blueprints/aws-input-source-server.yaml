@@ -1,5 +1,5 @@
 spec_version: 2
-description: Deploy helm on the agent cluster
+description: Deploy the AWS input source server - Gain access to bucket or RDS lists based on role and region.
 
 inputs:
   agent:
