@@ -1,0 +1,43 @@
+spec_version: 2
+description: Demonstrate input-source
+
+inputs:
+  agent_name:
+    # not using type 'agent' in order to avoid having to add agent to space to pass static validation
+    type: string
+  aws_account:
+    type: input-source
+    source-name: aws_account_roles
+  region:
+      allowed-values:
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - us-east-1
+      - us-west-1
+      - us-west-2
+      - ap-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-southeast-1
+      - ap-southeast-2
+      - sa-east-1
+      - ca-central-1
+  vpc:
+    type: input-source
+    source-name: aws_vpc
+    depends-on: aws_account, region
+    overrides:
+    - query: '?role_arn={{ .inputs.aws_account }}&region={{ .inputs.region }}'
+
+grains:
+  sleep:
+    kind: shell
+    spec:
+      agent:
+        name: '{{.inputs.agent_name}}'
+      activities:
+        deploy:
+          commands:
+            - "echo '{{ .inputs.aws_account }}, {{ .inputs.region }}, {{ .inputs.vpc }}'"
