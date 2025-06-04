@@ -29,7 +29,7 @@ inputs:
     source-name: aws_vpc
     depends-on: aws_account, region
     overrides:
-    - query: '?role_arn={{ .inputs.aws_account }}&region={{ .inputs.region }}'
+    - query: '?role_arn={{ .inputs.aws_account | url_encode }}&region={{ .inputs.region | url_encode }}'
 
 grains:
   sleep:
