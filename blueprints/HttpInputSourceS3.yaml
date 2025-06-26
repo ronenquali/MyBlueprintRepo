@@ -1,0 +1,29 @@
+spec_version: 2
+description: Demonstrate input-source
+
+inputs:
+  agent_name:
+    # not using type 'agent' in order to avoid having to add agent to space to pass static validation
+    type: string
+  aws_account_role:
+      allowed-values:
+      - arn:aws:iam::046086677675:role/S3_RDS_readonly_QualiDev1_Ronen
+      - arn:aws:iam::560096288131:role/S3_RDS_readonly_QualiDev1_Ronen
+      - arn:aws:iam::523910224939:role/S3_RDS_readonly_QualiDev1_Ronen
+  s3_bucket:
+    type: input-source
+    source-name: aws_s3
+    depends-on: aws_account_role
+    overrides:
+    - query: '?role_arn={{ .inputs.aws_account_role }}'
+
+grains:
+  sleep:
+    kind: shell
+    spec:
+      agent:
+        name: '{{.inputs.agent_name}}'
+      activities:
+        deploy:
+          commands:
+            - "echo '{{ .inputs.aws_account_role }}, {{ .inputs.s3_bucket }}'"
