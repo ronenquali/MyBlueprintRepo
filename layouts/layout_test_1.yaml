@@ -1,0 +1,13 @@
+# comment
+kind: layout
+description: "layout for ..."
+
+table:
+  hide:
+    resource-types:
+      #- aws_instance
+      - "aws_bucket"
+      - aws_vpc
+      - "AWS::BUCKET"
+      - null_resource
+      #- "*"  # hide all
