@@ -4,7 +4,7 @@ layout:
   source:
     store: MyBlueprintRepo
     path: layouts/layout_test_1.yaml
-  exclude-from-layout:  #   optional
+  exclude-from-layout:  #    optional
     - shell-echo
 inputs:
   agent_name:
