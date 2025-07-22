@@ -2,5 +2,5 @@ spec_version: 2
 description: an empty blueprint
 customization:
   grains-map:
-    initial-map-view: orchestration / custom # optional, defaults to custom
-    viewport: { x: 100, y: 100, zoom: 1.5 }  # optional
+    initial-map-view: custom
+    viewport: { x: 100, y: 100, zoom: 1.5 }
