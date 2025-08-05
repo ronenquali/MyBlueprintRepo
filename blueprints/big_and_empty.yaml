@@ -36,3 +36,5 @@ grains:
       source:
         store: 'MyBlueprintRepo'
         path: blueprints/contains-empty.yaml
+
+        
