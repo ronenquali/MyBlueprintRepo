@@ -17,22 +17,22 @@ grains:
         path: blueprints/empty.yaml
   EmptyG3:
     kind: 'blueprint'
+    depends-on: EmptyG2, EmptyG1
     spec:
-      depends-on: EmptyG2, EmptyG1
       source:
         store: 'MyBlueprintRepo'
         path: blueprints/empty.yaml
   CEmpty1:
     kind: 'blueprint'
+    depends-on: EmptyG2, EmptyG1
     spec:
-      depends-on: EmptyG2, EmptyG1
       source:
         store: 'MyBlueprintRepo'
         path: blueprints/contains-empty.yaml
   CEmpty2:
     kind: 'blueprint'
+    depends-on: CEmpty1
     spec:
-      depends-on: CEmpty1
       source:
         store: 'MyBlueprintRepo'
         path: blueprints/contains-empty.yaml
