@@ -1,0 +1,38 @@
+spec_version: 2
+description: an blueprint containing an empty blueprint
+customization:
+  custo-desc: customization for contains-empty
+grains:
+  EmptyG1:
+    kind: 'blueprint'
+    spec:
+      source:
+        store: 'MyBlueprintRepo'
+        path: blueprints/empty.yaml
+  EmptyG2:
+    kind: 'blueprint'
+    spec:
+      source:
+        store: 'MyBlueprintRepo'
+        path: blueprints/empty.yaml
+  EmptyG3:
+    kind: 'blueprint'
+    spec:
+      depends-on: EmptyG2, EmptyG1
+      source:
+        store: 'MyBlueprintRepo'
+        path: blueprints/empty.yaml
+  CEmpty1:
+    kind: 'blueprint'
+    spec:
+      depends-on: EmptyG2, EmptyG1
+      source:
+        store: 'MyBlueprintRepo'
+        path: blueprints/contains-empty.yaml
+  CEmpty2:
+    kind: 'blueprint'
+    spec:
+      depends-on: CEmpty1
+      source:
+        store: 'MyBlueprintRepo'
+        path: blueprints/contains-empty.yaml
