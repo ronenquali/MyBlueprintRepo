@@ -1,0 +1,84 @@
+spec_version: 2
+description: an blueprint containing an empty blueprint
+environment:
+  environment_name: big_and_empty-20250806T12072488
+  state: inactive
+  owner_email: ronen.a@quali.com
+# inputs can be provided by the user, API or CI plugin when creating an environment.
+inputs: {}
+# outputs define which data that was generated during environment provisioning will be returned to the user, API or CI.
+outputs: {}
+grains:
+  EmptyG1:
+    kind: blueprint
+    spec:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/empty.yaml
+      inputs: []
+      # The environment variables declared in this section will be available during the grain deployment as well as the grain destroy phase
+      # env-vars:
+      # - VAR_NAME: var value
+      env-vars: []
+      outputs: []
+      # Helm commands to run before installing the chart
+      commands: []
+  EmptyG2:
+    kind: blueprint
+    spec:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/empty.yaml
+      inputs: []
+      # The environment variables declared in this section will be available during the grain deployment as well as the grain destroy phase
+      # env-vars:
+      # - VAR_NAME: var value
+      env-vars: []
+      outputs: []
+      # Helm commands to run before installing the chart
+      commands: []
+  EmptyG3:
+    kind: blueprint
+    depends-on: EmptyG2, EmptyG1
+    spec:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/empty.yaml
+      inputs: []
+      # The environment variables declared in this section will be available during the grain deployment as well as the grain destroy phase
+      # env-vars:
+      # - VAR_NAME: var value
+      env-vars: []
+      outputs: []
+      # Helm commands to run before installing the chart
+      commands: []
+  CEmpty1:
+    kind: blueprint
+    depends-on: EmptyG2, EmptyG1
+    spec:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/contains-empty.yaml
+      inputs: []
+      # The environment variables declared in this section will be available during the grain deployment as well as the grain destroy phase
+      # env-vars:
+      # - VAR_NAME: var value
+      env-vars: []
+      outputs: []
+      # Helm commands to run before installing the chart
+      commands: []
+  CEmpty2:
+    kind: blueprint
+    depends-on: CEmpty1
+    spec:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/contains-empty.yaml
+      inputs: []
+      # The environment variables declared in this section will be available during the grain deployment as well as the grain destroy phase
+      # env-vars:
+      # - VAR_NAME: var value
+      env-vars: []
+      outputs: []
+      # Helm commands to run before installing the chart
+      commands: []
