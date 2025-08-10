@@ -1,5 +1,5 @@
 spec_version: 2
-description: an blueprint containing an empty blueprint!!!!!!
+description: an blueprint containing an empty blueprint
 customization: in-file-default
 environment:
   environment_name: big_and_empty-20250806T12072488
