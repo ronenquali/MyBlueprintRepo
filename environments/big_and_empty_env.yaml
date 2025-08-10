@@ -3,7 +3,7 @@ description: an blueprint containing an empty blueprint!!!
 customization: in-file-default
 environment:
   environment_name: big_and_empty-20250806T12072488
-  state: inactive
+  state: active
   owner_email: ronen.a@quali.com
 # inputs can be provided by the user, API or CI plugin when creating an environment.
 inputs: {}
