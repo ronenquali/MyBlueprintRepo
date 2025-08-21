@@ -8,13 +8,13 @@ inputs:
   dog:
     type: input-source
     source-name: dogs
-    depends-on: owners
+    depends-on: owner
     overrides:
     - path: '/api/jsonBlob/{{.inputs.owner}}'
   treat:
     type: input-source
     source-name: treats
-    depends-on: owners
+    depends-on: owner
     overrides:
     - path: '/api/jsonBlob/{{.inputs.owner}}'
 
