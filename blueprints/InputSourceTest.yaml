@@ -5,12 +5,12 @@ inputs:
   owner:
     type: input-source
     source-name: owners
-  dog:
+  dog1:
     type: input-source
     source-name: dogs
     depends-on: owner
     overrides:
-    - path: '/api/jsonBlob/{{.inputs.owner | strip}}'
+    - path: '/api/jsonBlob/{{ .inputs.owner | strip }}'
   treat:
     type: input-source
     source-name: treats
