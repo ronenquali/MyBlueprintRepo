@@ -1,0 +1,27 @@
+spec_version: 2
+description: Demonstrate input-source
+
+inputs:
+  owner:
+    type: input-source
+    source-name: owners
+  dog:
+    type: input-source
+    source-name: dogs
+    depends-on: owners
+    overrides:
+    - path: '/api/jsonBlob/{{.inputs.owner}}'
+  treat:
+    type: input-source
+    source-name: treats
+    depends-on: owners
+    overrides:
+    - path: '/api/jsonBlob/{{.inputs.owner}}'
+
+grains:
+  EmptyG1:
+    kind: 'blueprint'
+    spec:
+      source:
+        store: 'MyBlueprintRepo'
+        path: blueprints/empty.yaml
