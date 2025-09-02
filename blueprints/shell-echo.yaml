@@ -1,5 +1,5 @@
 spec_version: 2
-description: a blueprint for testing as many features as possible..
+description: Runs a shell grain
 
 inputs:
   agent_name:
