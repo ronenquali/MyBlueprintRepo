@@ -2,7 +2,7 @@ spec_version: 2
 description: Runs a shell grain
 environment:
   environment_name: EaC-shell-echo
-  state: active
+  state: inactive
   owner_email: ronen.a@quali.com
   collaborators: 
     all_space_members: true
