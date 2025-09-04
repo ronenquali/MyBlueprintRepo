@@ -1,0 +1,31 @@
+spec_version: 2
+description: run shell and tf just for fun
+
+inputs:
+  agent:
+    type: agent
+  whatever:
+    default: not-important
+    
+outputs: {}
+
+grains:
+  dummy_sleep:
+    kind: terraform
+    spec:
+      source:
+        path: assets/terraform/dummy_sleep
+        store: MyBlueprintRepo
+      agent:
+        name: '{{ .inputs.agent }}'
+      inputs:
+        - sleep: '1s'
+  shell-echo:
+    kind: shell
+    spec:
+      agent:
+        name: '{{ .inputs.agent }}'
+      activities:
+        deploy:
+          commands:
+            - "echo {{ .inputs.whatever }}"
