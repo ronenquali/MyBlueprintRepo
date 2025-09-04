@@ -1,0 +1,21 @@
+spec_version: 2
+description: Runs a shell grain
+
+inputs:
+  agent_name:
+    type: agent
+    description: must be k8s
+  generic_input:
+    type: string
+    default: nothing
+    
+grains:
+ shell-echo:
+    kind: shell
+    spec:
+      agent:
+        name: '{{ .inputs.agent_name }}'
+      files:
+        - source: MyBlueprintRepo
+          path: scripts/echo.sh
+          commit: a1e0768cf777edbaa12455aa13e9623c2161b256
