@@ -25,4 +25,4 @@ grains:
       activities:
         deploy:
           commands:
-          - command: echo {{ .inputs.generic_input }}
+          - command: echo {{ .inputs.generic_input }} 123
