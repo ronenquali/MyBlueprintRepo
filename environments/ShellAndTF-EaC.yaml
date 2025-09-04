@@ -2,7 +2,7 @@ spec_version: 2
 description: run shell and tf just for fun
 environment:
   environment_name: ShellAndTF-EaC💀
-  state: active
+  state: inactive
   owner_email: ronen.a@quali.com
 inputs:
   agent:
