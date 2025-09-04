@@ -29,4 +29,4 @@ grains:
       activities:
         deploy:
           commands:
-          - command: echo {{ .inputs.whatever }} 1233
+          - command: echo {{ .inputs.whatever }} 12333
