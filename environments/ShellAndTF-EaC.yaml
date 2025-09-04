@@ -1,0 +1,32 @@
+spec_version: 2
+description: run shell and tf just for fun
+environment:
+  environment_name: ShellAndTF-EaC💀
+  state: active
+  owner_email: ronen.a@quali.com
+inputs:
+  agent:
+    type: agent
+    default: newer1
+  whatever:
+    default: not-important
+grains:
+  dummy_sleep:
+    kind: terraform
+    spec:
+      source:
+        store: MyBlueprintRepo
+        path: assets/terraform/dummy_sleep
+      agent:
+        name: '{{ .inputs.agent }}'
+      inputs:
+      - sleep: 1s
+  shell-echo:
+    kind: shell
+    spec:
+      agent:
+        name: '{{ .inputs.agent }}'
+      activities:
+        deploy:
+          commands:
+          - command: echo {{ .inputs.whatever }}
