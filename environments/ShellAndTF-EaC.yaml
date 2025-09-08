@@ -20,7 +20,7 @@ grains:
       agent:
         name: '{{ .inputs.agent }}'
       inputs:
-      - sleep: 1s
+      - sleep: 2s
   shell-echo:
     kind: shell
     spec:
