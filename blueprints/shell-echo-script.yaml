@@ -22,4 +22,4 @@ grains:
       activities:
         deploy:
           commands:
-            - "echo.sh"
+            - "./echo.sh"
