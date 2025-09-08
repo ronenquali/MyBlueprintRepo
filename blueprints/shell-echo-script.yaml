@@ -19,3 +19,7 @@ grains:
         - source: MyBlueprintRepo
           path: scripts/echo.sh
           commit: a1e0768cf777edbaa12455aa13e9623c2161b256
+      activities:
+        deploy:
+          commands:
+            - "echo.sh"
