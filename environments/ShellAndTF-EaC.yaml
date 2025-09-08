@@ -25,7 +25,7 @@ grains:
     kind: shell
     spec:
       agent:
-        name: '{{ .inputs.agent_name }}'
+        name: '{{ .inputs.agent }}'
       files:
         - source: MyBlueprintRepo
           path: scripts/echo.sh
