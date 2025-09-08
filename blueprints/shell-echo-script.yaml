@@ -10,7 +10,7 @@ inputs:
     default: nothing
     
 grains:
- shell-echo:
+  shell-echo:
     kind: shell
     spec:
       agent:
