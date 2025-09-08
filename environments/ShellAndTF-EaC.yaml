@@ -2,7 +2,7 @@ spec_version: 2
 description: run shell and tf just for fun
 environment:
   environment_name: ShellAndTF-EaC💀
-  state: inactive
+  state: active
   owner_email: ronen.a@quali.com
 inputs:
   agent:
@@ -25,8 +25,12 @@ grains:
     kind: shell
     spec:
       agent:
-        name: '{{ .inputs.agent }}'
+        name: '{{ .inputs.agent_name }}'
+      files:
+        - source: MyBlueprintRepo
+          path: scripts/echo.sh
+          commit: a1e0768cf777edbaa12455aa13e9623c2161b256
       activities:
         deploy:
           commands:
-          - command: echo {{ .inputs.whatever }} 12
+            - "./echo.sh"
