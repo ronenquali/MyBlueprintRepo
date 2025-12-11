@@ -9,7 +9,7 @@ grains:
     kind: shell
     spec:
       agent:
-        name: management-server-torque-agent
+        name: newer1
         runner-namespace: default
       env-vars: []
       commands: []
