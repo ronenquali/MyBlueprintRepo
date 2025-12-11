@@ -10,9 +10,6 @@ grains:
     spec:
       agent:
         name: newer1
-        runner-namespace: default
-      env-vars: []
-      commands: []
       activities:
         deploy:
           commands:
