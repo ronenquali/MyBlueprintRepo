@@ -1,0 +1,23 @@
+spec_version: 2
+description: Zero Touch bare metal configuration with Cisco Intersight and OpenShift installation
+outputs:
+  kubeconfig:
+    value: '{{ .grains.prepare_openshift_installation.activities.deploy.commands.prepare-openshift.outputs.kubeconfig }}'
+    quick: true
+grains:
+  prepare_openshift_installation:
+    kind: shell
+    spec:
+      agent:
+        name: management-server-torque-agent
+        runner-namespace: default
+      env-vars: []
+      commands: []
+      activities:
+        deploy:
+          commands:
+            - name: prepare-openshift
+              command: |
+                export kubeconfig=$'line1\n  - line2\n    - line3'
+              outputs:
+                - kubeconfig
