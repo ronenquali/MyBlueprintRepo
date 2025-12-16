@@ -5,9 +5,8 @@ inputs:
   agent_name:
     type: agent
     description: must be k8s
-  generic_input:
-    type: string
-    default: nothing
+  credential_test:
+    type: credentials
     
 grains:
  shell-echo:
@@ -15,7 +14,18 @@ grains:
     spec:
       agent:
         name: '{{ .inputs.agent_name }}'
+      authentication:
+        - '{{ .inputs.credential_test }}'
       activities:
         deploy:
           commands:
-            - "echo {{ .inputs.generic_input }}"
+            - "echo $INTERSIGHT_API_KEY"
+            - "echo $INTERSIGHT_SECRET_KEY"
+            - "echo $INTERSIGHT_REGION"
+            - "echo $TF_VAR_INTERSIGHT_API_KEY"
+            - "echo $TF_VAR_INTERSIGHT_SECRET_KEY"
+            - "echo $TF_VAR_INTERSIGHT_REGION"
+            - "echo $NEXUS_DASHBOARD_API_KEY"
+            - "echo $NEXUS_DASHBOARD_API_URL"
+            - "echo $NVAIE_API_KEY"
+            - "echo $REDHAT_PULL_SECRET"         
