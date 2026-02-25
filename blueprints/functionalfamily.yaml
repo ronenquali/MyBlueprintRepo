@@ -2,7 +2,6 @@ spec_version: 2
 description: A blueprint family
 metadata:
   display-name: family1
-  icon: graphics/myicon.png
   self-service: true
   blueprint-labels:
     - key: 'new_key'
