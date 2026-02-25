@@ -1,0 +1,19 @@
+spec_version: 2
+description: A blueprint family
+metadata:
+  display-name: family1
+  icon: graphics/myicon.png
+  self-service: true
+  blueprint-labels:
+    - key: 'new_key'
+      value: 'new_value'
+family:
+  members:
+    first-variation:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/empty.yaml
+    second-variation:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/big_and_empty.yaml
