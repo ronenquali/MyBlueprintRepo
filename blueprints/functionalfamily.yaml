@@ -6,6 +6,8 @@ metadata:
 #  blueprint-labels:
 #    - key: 'new_key'
 #     value: 'new_value'
+instructions:
+  text: "Can't launch this!"
 family:
   members:
     first-variation:
