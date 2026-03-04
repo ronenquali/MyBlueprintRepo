@@ -18,3 +18,7 @@ family:
       source:
         store: MyBlueprintRepo
         path: blueprints/big_and_empty.yaml
+    third-variation:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/empty2.yaml
