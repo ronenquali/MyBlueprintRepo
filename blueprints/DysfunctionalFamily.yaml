@@ -8,13 +8,6 @@ metadata:
 #     value: 'new_value'
 instructions:
   text: "Can't launch this!"
-grains:
-  cantHaveGrainInFamily:
-    kind: 'blueprint'
-    spec:
-      source:
-        store: 'MyBlueprintRepo'
-        path: blueprints/empty.yaml
 family:
   members:
     first-variation:
