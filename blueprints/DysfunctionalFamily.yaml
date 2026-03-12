@@ -16,10 +16,10 @@ grains:
         store: 'MyBlueprintRepo'
         path: blueprints/empty.yaml
 family:
-  membersbad:
+  members:
     first-variation:
       source:
-        store: MyBlueprintRepo
+        store: MyBlueprintRepoBADBADBADBAD
         path: blueprints/empty.yaml
     second-variation:
       source:
