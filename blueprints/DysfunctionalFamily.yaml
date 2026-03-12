@@ -12,8 +12,8 @@ family:
   members:
     first-variation:
       source:
-        store: MyBlueprintRepoBADBADBADBAD
-        path: blueprints/empty.yaml
+        store: MyBlueprintRepo
+        path: blueprints/big_and_empty.yaml
     second-variation:
       source:
         store: MyBlueprintRepo
