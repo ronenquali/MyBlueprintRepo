@@ -1,0 +1,31 @@
+spec_version: 2
+description: An invalid blueprint family
+metadata:
+  display-name: DysfunctionalFamily
+#  self-service: false
+#  blueprint-labels:
+#    - key: 'new_key'
+#     value: 'new_value'
+instructions:
+  text: "Can't launch this!"
+grains:
+  cantHaveGrainInFamily:
+    kind: 'blueprint'
+    spec:
+      source:
+        store: 'MyBlueprintRepo'
+        path: blueprints/empty.yaml
+family:
+  members:
+    first-variation:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/empty.yaml
+    second-variation:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/big_and_empty.yaml
+    third-variation:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/empty2.yaml
