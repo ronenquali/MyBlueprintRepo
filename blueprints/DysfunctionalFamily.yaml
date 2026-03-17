@@ -13,7 +13,7 @@ family:
     first-variation:
       source:
         store: MyBlueprintRepo
-        path: blueprints/functionalfamily.yaml
+        path: blueprints/nana.yaml
     second-variation:
       source:
         store: MyBlueprintRepo
