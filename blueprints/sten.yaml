@@ -1,0 +1,59 @@
+spec_version: 2
+
+
+template:
+  placeholders:
+    - path: "grains.initial-setup"
+      hint: "Initial setup Grain (usually ansible/shell)"
+    - path: "grains.virtual_machine.spec.inputs"
+      hint: "Inputs for terraform"
+    - path: "outputs.status.value"
+      hint: "Status output from health-check grain"
+    
+  
+inputs:
+  agent:
+    type: agent
+  input1:
+    default: 'default1'
+  input2:
+    default: 'default2'
+
+
+outputs:  
+  status:
+    # place holder. should be adapt if changed in the health-check
+    value: '{{.grains.health-check.outputs.status}}'
+  
+
+grains:
+  # place holder for grain
+  initial-setup:
+    kind: shell    
+    spec:
+      agent:
+        name: '{{.inputs.agent}}'
+
+  virtual_machine:
+    kind: terraform
+    depends-on: initial-setup
+    spec:
+      source:
+        path: terraform/vm
+        store: iac-samples      
+      agent:        
+        name: '{{.inputs.agent}}'                
+      # inputs marked as templated, user should add/remove/change inputs and finalize (mark as done)
+      inputs:
+        - input1: '{{.inputs.input1}}'
+        - input2: '{{.inputs.input2}}'
+    
+  # place holder for grain
+  health-check:
+    kind: shell
+    depends-on: virtual_machine
+    spec:
+      agent:
+        name: '{{.inputs.agent}}'
+      outputs:
+        - status
