@@ -5,3 +5,10 @@ customization:
   grains-map:
     initial-map-view: custom
     viewport: { x: 100, y: 100, zoom: 1.5 }
+inputs:
+  myinput:
+    type: 'string'
+    default: 'empty input'
+outputs:
+  myoutput:
+    value: '{{ .inputs.myinput }}'
