@@ -1,0 +1,60 @@
+<?xml version="1.0"?><svg width="744.09448" height="1052.3622" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>Diverse Surf</title>
+ <defs>
+  <linearGradient id="linearGradient684">
+   <stop id="stop685" offset="0" stop-opacity="0" stop-color="#ffffff"/>
+   <stop id="stop686" offset="1" stop-opacity="0.201613" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linearGradient635">
+   <stop id="stop636" offset="0" stop-opacity="0" stop-color="#ffffff"/>
+   <stop id="stop637" offset="1" stop-opacity="0.653226" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linearGradient631">
+   <stop id="stop632" offset="0" stop-opacity="0" stop-color="#ffffff"/>
+   <stop id="stop633" offset="1" stop-opacity="0.298387" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linearGradient609">
+   <stop id="stop610" offset="0" stop-opacity="0" stop-color="#ffffff"/>
+   <stop id="stop611" offset="1" stop-opacity="0.298387" stop-color="#000000"/>
+  </linearGradient>
+  <radialGradient cx="0.358333" cy="0.398438" fx="0.383333" fy="0.414063" id="radialGradient612" r="0.620666" xlink:href="#linearGradient609"/>
+  <linearGradient id="linearGradient626" x1="0.45" x2="0.44" xlink:href="#linearGradient684" y1="0.03125" y2="0.976563"/>
+  <linearGradient id="linearGradient629" xlink:href="#linearGradient609"/>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <g id="g659">
+   <rect height="70.866081" id="rect655" width="70.86615" x="468.457829" y="606.7661" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#007f00"/>
+   <rect height="70.866081" id="rect656" width="70.86615" x="468.457829" y="677.30486" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#007f00"/>
+   <rect height="70.866081" id="rect657" width="70.86615" x="468.457829" y="747.84365" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#007f00"/>
+   <rect height="70.866081" id="rect658" width="70.86615" x="468.457829" y="819.10222" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#007f00"/>
+  </g>
+  <g id="g664" transform="matrix(-1.836909e-16,1,-1,-1.836909e-16,-534.6961,990.8876) ">
+   <rect height="70.866081" id="rect651" width="70.86615" x="-171.684389" y="-927.776583" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#b30000"/>
+   <rect height="70.866081" id="rect652" width="70.86615" x="-171.684389" y="-857.237823" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#b30000"/>
+   <rect height="70.866081" id="rect653" width="70.86615" x="-171.684389" y="-786.699033" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#b30000"/>
+   <rect height="70.866081" id="rect654" width="70.86615" x="-242.223179" y="-786.699033" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#b30000"/>
+  </g>
+  <g id="g678" transform="matrix(6.123032e-17,-1,1,6.123032e-17,-1007.174,-292.4293) ">
+   <rect height="70.866081" id="rect670" transform="matrix(-1.836909e-16,1,-1,-1.836909e-16,-27.7682,675.3301) " width="70.86615" x="726.904753" y="942.638181" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#0000cc"/>
+   <rect height="70.866081" id="rect671" transform="matrix(-1.836909e-16,1,-1,-1.836909e-16,-27.7682,675.3301) " width="70.86615" x="726.904753" y="1013.176941" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#0000cc"/>
+   <rect height="70.866081" id="rect672" transform="matrix(-1.836909e-16,1,-1,-1.836909e-16,-27.7682,675.3301) " width="70.86615" x="726.904753" y="1083.715731" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#0000cc"/>
+   <rect height="70.866081" id="rect673" transform="matrix(-1.836909e-16,1,-1,-1.836909e-16,0,0) " width="70.86615" x="1331.696063" y="1040.229001" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#0000cc"/>
+  </g>
+  <g id="g696">
+   <rect height="70.866081" id="rect688" width="70.86615" x="181.048451" y="605.220028" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#cdcd00"/>
+   <rect height="70.866081" id="rect689" width="70.86615" x="251.587279" y="677.198349" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#cdcd00"/>
+   <rect height="70.866081" id="rect690" width="70.86615" x="251.587279" y="747.737139" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#cdcd00"/>
+   <rect height="70.866081" id="rect691" width="70.86615" x="181.04845" y="676.482206" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#cdcd00"/>
+  </g>
+  <g id="svg_9">
+   <rect height="217.549653" id="rect683" width="218.090516" x="321.279544" y="142.432828" stroke-width="1.0000000pt" fill-rule="evenodd" fill="url(#linearGradient626)"/>
+   <g id="svg_8">
+    <rect height="70.866081" width="70.86615" x="323.556168" y="330.342696" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#7f00ff" id="svg_4"/>
+    <rect height="70.866081" width="70.86615" x="466.023669" y="330.747886" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#7f00ff" id="svg_5"/>
+    <rect height="70.866081" width="70.86615" x="394.527114" y="401.428894" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#7f00ff" id="svg_6"/>
+    <rect height="70.866081" width="70.86615" x="394.839395" y="330.392754" stroke-width="6.25" stroke="#000000" fill-rule="evenodd" fill="#7f00ff" id="svg_7"/>
+   </g>
+  </g>
+ </g>
+</svg>
