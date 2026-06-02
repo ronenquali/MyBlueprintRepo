@@ -1,6 +1,8 @@
 spec_version: 2
 description: A blueprint family
 metadata:
+  icon:
+    path: graphics/quali-circle-logo.svg
   display-name: FunctionalFamily
 #  self-service: false
 #  blueprint-labels:
