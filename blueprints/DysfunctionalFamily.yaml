@@ -2,6 +2,8 @@ spec_version: 2
 description: An invalid blueprint family
 metadata:
   display-name: DysfunctionalFamily
+  icon:
+    path: graphics/Quali_Q_square_color.svg
 #  self-service: false
 #  blueprint-labels:
 #    - key: 'new_key'
