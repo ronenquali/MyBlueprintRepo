@@ -1,5 +1,8 @@
 spec_version: 2
 description: an empty blueprint
+metadata:
+  icon:
+    path: graphics/Quali_Q_square_color.svg
 customization:
   custo-desc: customization for empty
   grains-map:
