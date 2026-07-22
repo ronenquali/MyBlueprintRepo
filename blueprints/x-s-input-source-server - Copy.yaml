@@ -1,0 +1,24 @@
+spec_version: 2
+description: Deploy the AWS input source server - Gain access to bucket or RDS lists based on role and region.
+
+inputs:
+  agent:
+    type: agent
+  target-namespace:
+    type: string
+    default: "aws-input-source-ronen"
+  service-account:
+    type: string
+    default: "deployer-sa"
+
+grains:
+  server:
+    kind: kubernetes
+    spec:
+      source:
+        store: MyBlueprintRepo
+        path: assets/k8s/aws-input-source.yaml
+      agent:
+        name: '{{ .inputs.agent }}'
+        service-account: '{{ inputs.service-account }}'
+      target-namespace: '{{ inputs.target-namespace }}'

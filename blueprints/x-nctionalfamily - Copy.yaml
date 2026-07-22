@@ -1,0 +1,26 @@
+spec_version: 2
+description: A blueprint family
+metadata:
+  icon:
+    path: graphics/Quali_Q_square_color.svg
+  display-name: FunctionalFamily
+#  self-service: false
+#  blueprint-labels:
+#    - key: 'new_key'
+#     value: 'new_value'
+instructions:
+  text: "Can't launch this!!!"
+family:
+  members:
+    first-variation:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/empty.yaml
+    second-variation:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/big_and_empty.yaml
+    third-variation:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/empty2.yaml

@@ -1,0 +1,26 @@
+spec_version: 2
+description: An invalid blueprint family
+metadata:
+  display-name: DysfunctionalFamily
+  icon:
+    path: graphics/webgame-icon.svg
+#  self-service: false
+#  blueprint-labels:
+#    - key: 'new_key'
+#     value: 'new_value'
+instructions:
+  text: "Can't launch this!"
+family:
+  members:
+    first-variation:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/naddda.yaml
+    second-variation:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/big_and_empty.yaml
+    third-variation:
+      source:
+        store: MyBlueprintRepo
+        path: blueprints/empty2.yaml

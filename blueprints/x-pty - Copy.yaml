@@ -1,0 +1,17 @@
+spec_version: 2
+description: an empty blueprint
+metadata:
+  icon:
+    path: graphics/Quali_Q_square_color.svg
+customization:
+  custo-desc: customization for empty
+  grains-map:
+    initial-map-view: custom
+    viewport: { x: 100, y: 100, zoom: 1.5 }
+inputs:
+  myinput:
+    type: 'string'
+    default: 'empty input'
+outputs:
+  myoutput:
+    value: '{{ .inputs.myinput }}'
