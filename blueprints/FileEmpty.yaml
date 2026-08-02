@@ -11,3 +11,5 @@ outputs:
   myoutput:
     value: '{{ .inputs.myinputfile }}'
     quick: true
+    allowed-formats:
+      - 'txt'
