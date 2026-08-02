@@ -2,12 +2,12 @@ spec_version: 2
 description: "Empty blueprint with file input"
 
 inputs:
-  myfile:
+  myinputfile:
     type: 'file'
     max-size-MB: 1
     max-files: 2
 
 outputs:
   myoutput:
-    value: '{{ .inputs.myinput }}'
+    value: '{{ .inputs.myinputfile }}'
     quick: true
