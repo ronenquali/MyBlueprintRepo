@@ -6,10 +6,11 @@ inputs:
     type: 'file'
     max-size-MB: 1
     max-files: 2
+    allowed-formats:
+      - 'txt'
 
 outputs:
   myoutput:
     value: '{{ .inputs.myinputfile }}'
     quick: true
-    allowed-formats:
-      - 'txt'
+
