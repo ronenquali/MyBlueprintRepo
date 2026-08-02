@@ -3,6 +3,7 @@ description: "Empty blueprint with file input"
 
 inputs:
   myinputfile:
+    sensitive: true
     type: 'file'
     max-size-MB: 1
     max-files: 2
