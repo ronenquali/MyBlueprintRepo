@@ -7,7 +7,7 @@ inputs:
     max-size-MB: 1
     max-files: 2
     allowed-formats:
-      - 'txt'
+      - 'png'
 
 outputs:
   myoutput:
