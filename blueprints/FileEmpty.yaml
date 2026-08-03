@@ -9,6 +9,13 @@ inputs:
     allowed-formats:
       - 'png'
 
+  MyInputFile:
+    type: 'file'
+    max-size-MB: 1
+    max-files: 2
+    allowed-formats:
+      - 'png'
+
 outputs:
   myoutput:
     value: '{{ .inputs.myinputfile }}'
