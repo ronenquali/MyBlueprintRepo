@@ -3,6 +3,7 @@ description: an publishable blueprint
 metadata:
   self-service:
     - sPace1
+    - outofspace
   
 inputs:
   myinput:
