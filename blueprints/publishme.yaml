@@ -1,7 +1,9 @@
 spec_version: 2
 description: an publishable blueprint
 metadata:
-  self-service: false
+  self-service:
+    - sPace1
+  
 inputs:
   myinput:
     type: 'string'
