@@ -1,0 +1,15 @@
+spec_version: 2
+description: showcase for all types of inputs that support allowed values
+
+inputs:
+  credential_name_filtered:
+    type: credentials
+    allowed-credential-providers:
+    - aws
+    - azure
+    - vsphere
+    - github
+    - intersight
+    - redhat
+    - nexus_dashboard
+    - nvaie
