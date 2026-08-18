@@ -8,7 +8,6 @@ inputs:
     - aws
     - azure
     - vsphere
-    - github
     - intersight
     - redhat
     - nexus_dashboard
